@@ -19,8 +19,17 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/user', [
+Route::group([
     'middleware' => 'auth',
-    'uses' => 'UserController@getUserIndex',
-    'as' => 'user.index'
-]);
+], function () {
+    Route::get('/user', [
+        'middleware' => 'auth',
+        'uses' => 'UserController@getUserIndex',
+        'as' => 'user.index'
+    ]);
+    
+    Route::post('/roulette/winprize', [
+        'uses' => 'RouletteController@postWinPrize',
+        'as' => 'roulette.win.prize'
+    ]);
+});

@@ -9,8 +9,6 @@ use App\Http\Requests;
 class UserController extends Controller
 {
     public function getUserIndex() {
-        return view('user.index',  [
-            'article' => 'Let\'s Play a Game!',
-        ]); 
+        return view('user.index'); 
     }
 }
