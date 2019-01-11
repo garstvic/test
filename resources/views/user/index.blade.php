@@ -7,6 +7,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome, {{ Auth::user()->name }} !</div>
                 <div class="panel-body">
+                    <div class="col-md-8">
+                        <p><span class="label label-success">Loyalty</span> {{ Auth::user()->loyalty->value }}</p>
+                        @foreach (Auth::user()->addresses as $address)
+                            <p><span class="label label-success">Address</span> {{ $address->country }}</p>
+                        @endforeach
+                        @foreach (Auth::user()->payments as $payment)
+                            <p><span class="label label-success">Payment</span> {{ $payment->creditCardType }} - {{ preg_replace('/(^[0-9]{4})([0-9]+)([0-9]{4})$/', '$1********$3', $payment->creditCardNumber) }}</p>
+                        @endforeach
+                    </div>
                     <div class="col-md-6 col-md-offset-4">
                         <p>Let's Play a Game!</p>
                     </div>

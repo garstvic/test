@@ -27,4 +27,12 @@ class User extends Authenticatable
     public function loyalty() {
         return $this->hasOne('App\UserLoyalty');
     }
+    
+    public function addresses() {
+        return $this->hasMany('App\UserAddress');
+    }
+    
+    public function payments() {
+        return $this->hasMany('App\UserPayment');
+    }
 }
