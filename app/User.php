@@ -24,15 +24,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function loyalty() {
-        return $this->hasOne('App\UserLoyalty');
+        return $this->hasOne(UserLoyalty::class);
     }
     
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */   
     public function addresses() {
-        return $this->hasMany('App\UserAddress');
+        return $this->hasMany(UserAddress::class);
     }
     
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */      
     public function payments() {
-        return $this->hasMany('App\UserPayment');
+        return $this->hasMany(UserPayment::class);
     }
 }
