@@ -8,7 +8,7 @@
                 <div class="panel-heading">Congratulations, {{ Auth::user()->name }}!</div>
 
                 <div class="panel-body">
-                    <p>You have won Prize!</p>
+                    <p>You have won Loyalty!</p>
                     <p>User Loyalty: {{ Auth::user()->loyalty->value }}</p>
                     <p>{{ $prize->name }}</p>
                     <p>Category: {{ $prize->prizeCategory->category->name }}</p>
