@@ -1,4 +1,4 @@
-Laravel 5 Blog Application
+Laravel 5 Test Application
 
 // Install framework
 
@@ -52,7 +52,7 @@ Run Project
 
 // Clone Application from GitHub
 
-$ git clone https://github.com/garstvic/casexe-test.git
+$ git clone https://github.com/garstvic/test.git
 
 $ rsync -avh ./laravel-blog-app/ ./
 
